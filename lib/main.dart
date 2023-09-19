@@ -46,22 +46,22 @@ class _MyHomePageState extends State<MyHomePage> with MyLogger {
   @override
   Widget build(BuildContext context) {
     // Trace log
-    getLogger().t('Trace log');
+    logger.t('Trace log');
 
     // Debug log
-    getLogger().d('Debug log');
+    logger.d('Debug log');
 
     // Info log
-    getLogger().i('Info log');
+    logger.i('Info log');
 
     // Warning log
-    getLogger().w('Warning log');
+    logger.w('Warning log');
 
     // Error log
-    getLogger().e("Error log");
+    logger.e("Error log");
 
     // Fatal log
-    getLogger().f("Fatal log");
+    logger.f("Fatal log");
 
     _myCLass.output();
 
