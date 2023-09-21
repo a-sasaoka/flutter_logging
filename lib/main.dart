@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_logging/mixin/my_logger.dart';
 import 'package:flutter_logging/my_class.dart';
-import 'package:logger/logger.dart';
 
-void main() {
-  // ログレベルを指定
-  Logger.level = Level.all;
+Future<void> main() async {
+  // 設定ファイルの読み込み
+  await dotenv.load(fileName: '.env');
   runApp(const MyApp());
 }
 

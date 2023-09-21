@@ -1,13 +1,19 @@
+import 'package:flutter_logging/filters/customize_filter.dart';
 import 'package:logger/logger.dart';
 
-// ログのカスタマイズはここに集約
+/// [loggerパッケージ](https://pub.dev/packages/logger)をカスタマイズしたmixin
+///
+/// * フォルターとして[CustomizeFilter]を使用する
+/// * ログレベルと日時も出力する
 mixin MyLogger {
+  /// カスタマイズしたインスタンス
   var logger = Logger(
-    // デフォルト（DevelopmentFilter）はリリースモードだとログが出ないため、ProductionFilterを指定
-    filter: ProductionFilter(),
-    printer: PrettyPrinter(
-      // 時刻も出力する
-      printTime: true,
+    filter: CustomizeFilter(),
+    printer: PrefixPrinter(
+      PrettyPrinter(
+        // 時刻も出力する
+        printTime: true,
+      ),
     ),
   );
 }
