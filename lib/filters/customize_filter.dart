@@ -1,7 +1,21 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:logger/logger.dart';
 
-/// 設定ファイルの定義にしたがって、出力するログレベルを制御するFilter
+/// 設定ファイル(.env)の定義にしたがって、出力するログレベルを制御するFilter
+///
+/// 設定出来るログレベルは下記の通り（指定無し or 下記以外の値の場合は全てのレベルのログを出力）
+/// * trace
+/// * debug
+/// * info
+/// * warning
+/// * error
+/// * fatal
+/// * off
+///
+/// 記入例
+/// ```
+/// LOG_LEVEL=error
+/// ```
 class CustomizeFilter extends LogFilter {
   Level? _level;
 
