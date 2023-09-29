@@ -5,11 +5,13 @@ import 'package:flutter_logging/my_class.dart';
 
 Future<void> main() async {
   // 設定ファイルの読み込み
-  await dotenv.load(fileName: '.env');
+  await dotenv.load();
   runApp(const MyApp());
 }
 
+/// MyApp
 class MyApp extends StatelessWidget {
+  /// コンストラクタ
   const MyApp({super.key});
 
   @override
@@ -25,8 +27,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/// MyHomePage
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  /// コンストラクタ
+  const MyHomePage({required this.title, super.key});
+
+  /// タイトル
   final String title;
 
   @override
@@ -46,22 +52,23 @@ class _MyHomePageState extends State<MyHomePage> with MyLogger {
   @override
   Widget build(BuildContext context) {
     // Trace log
-    logger.t('Trace log');
+    logger
+      ..t('Trace log')
 
-    // Debug log
-    logger.d('Debug log');
+      // Debug log
+      ..d('Debug log')
 
-    // Info log
-    logger.i('Info log');
+      // Info log
+      ..i('Info log')
 
-    // Warning log
-    logger.w('Warning log');
+      // Warning log
+      ..w('Warning log')
 
-    // Error log
-    logger.e("Error log");
+      // Error log
+      ..e('Error log')
 
-    // Fatal log
-    logger.f("Fatal log");
+      // Fatal log
+      ..f('Fatal log');
 
     _myCLass.output();
 

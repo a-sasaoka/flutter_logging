@@ -7,7 +7,7 @@ import 'package:logger/logger.dart';
 /// * ログレベルと日時も出力する
 mixin MyLogger {
   /// カスタマイズしたインスタンス
-  var logger = Logger(
+  Logger logger = Logger(
     filter: CustomizeFilter(),
     printer: PrefixPrinter(
       PrettyPrinter(
